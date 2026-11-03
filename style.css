@@ -48,8 +48,16 @@ a {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--line);
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 5;
+    background: var(--ink);
+    transition: background-color .25s, border-color .25s;
+}
+
+.site-header.is-scrolled {
+    background: transparent;
+    border-bottom-color: transparent;
 }
 
 .brand {
@@ -84,7 +92,14 @@ a {
 
 .site-nav a {
     color: var(--muted);
-    transition: color .2s;
+    transition: color .2s, border-color .2s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+}
+
+.site-nav a.active {
+    color: var(--lime);
+    border-bottom-color: var(--lime);
 }
 
 .site-nav a:hover,
@@ -124,13 +139,20 @@ a {
 }
 
 .hero {
-    min-height: 650px;
-    padding-top: 108px;
-    padding-bottom: 85px;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr .8fr;
+    min-height: 560px;
+    padding-top: 125px;
+    padding-bottom: 125px;
+    display: flex;
     align-items: center;
+}
+
+.hero-copy {
+    max-width: 720px;
+}
+
+.hero-copy .eyebrow {
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .eyebrow {
@@ -167,9 +189,9 @@ h2 em {
 
 .hero-intro {
     color: var(--muted);
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.6;
-    max-width: 350px;
+    max-width: 500px;
     margin: 34px 0;
 }
 
@@ -203,129 +225,6 @@ h2 em {
     border-bottom: 1px solid #52555c;
     padding-bottom: 7px;
     transition: color .2s;
-}
-
-.hero-art {
-    min-height: 390px;
-    position: relative;
-}
-
-.orbit {
-    position: absolute;
-    border: 1px solid rgba(216, 245, 106, .32);
-    border-radius: 50%;
-    transform: rotate(-28deg);
-}
-
-.orbit-one {
-    width: 390px;
-    height: 155px;
-    top: 105px;
-    left: 10%;
-}
-
-.orbit-two {
-    width: 390px;
-    height: 155px;
-    top: 105px;
-    left: 10%;
-    transform: rotate(28deg);
-    border-color: rgba(104, 121, 255, .55);
-}
-
-.hero-card {
-    background: var(--blue);
-    width: 230px;
-    height: 255px;
-    padding: 25px;
-    position: absolute;
-    top: 47px;
-    left: 29%;
-    transform: rotate(8deg);
-    box-shadow: 15px 20px 0 rgba(216, 245, 106, .14);
-}
-
-.card-label {
-    color: #bec5ff;
-    font: 10px var(--mono);
-    text-transform: uppercase;
-}
-
-.hero-card strong {
-    display: block;
-    font-size: 38px;
-    line-height: .92;
-    letter-spacing: -2px;
-    margin-top: 75px;
-}
-
-.hero-card i {
-    color: var(--lime);
-    font-style: normal;
-}
-
-.card-arrow {
-    position: absolute;
-    right: 22px;
-    bottom: 20px;
-    font-size: 27px;
-}
-
-.code-snippet {
-    position: absolute;
-    right: 2%;
-    bottom: 26px;
-    color: var(--paper);
-    font: 10px var(--mono);
-}
-
-.code-purple {
-    color: #c1a6ff;
-}
-
-.code-blue {
-    color: #7bb9ff;
-}
-
-.code-green {
-    color: var(--lime);
-}
-
-.hero-star {
-    color: var(--lime);
-    position: absolute;
-    font-size: 25px;
-}
-
-.star-one {
-    top: 15px;
-    right: 11%;
-}
-
-.star-two {
-    bottom: 68px;
-    left: 7%;
-    color: var(--blue);
-    font-size: 16px;
-}
-
-.scroll-note {
-    position: absolute;
-    bottom: 26px;
-    left: 6vw;
-    color: #5f6267;
-    font: 10px var(--mono);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.scroll-line {
-    width: 38px;
-    height: 1px;
-    background: #5f6267;
 }
 
 .marquee-band {
@@ -768,44 +667,9 @@ footer {
 
     .hero {
         display: block;
-        min-height: 760px;
-        padding-top: 80px;
-    }
-
-    .hero-art {
-        margin-top: 55px;
-        min-height: 280px;
-    }
-
-    .hero-card {
-        left: 25%;
-        top: 20px;
-        width: 180px;
-        height: 210px;
-    }
-
-    .hero-card strong {
-        font-size: 30px;
-        margin-top: 55px;
-    }
-
-    .orbit,
-    .orbit-two {
-        width: 300px;
-        height: 125px;
-        left: 2%;
-        top: 75px;
-    }
-
-    .code-snippet {
-        bottom: 0;
-        right: 0;
-        font-size: 8px;
-    }
-
-    .scroll-note {
-        bottom: 15px;
-        left: 7vw;
+        min-height: 600px;
+        padding-top: 90px;
+        padding-bottom: 90px;
     }
 
     .marquee-band {
