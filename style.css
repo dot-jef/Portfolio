@@ -482,40 +482,44 @@ h2 em {
     border-top: 1px solid var(--line);
     padding-top: 145px;
     padding-bottom: 150px;
+}
+
+.about-details {
     display: grid;
-    grid-template-columns: .7fr 1.1fr .9fr;
-    gap: 50px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px 45px;
 }
 
-.about-stamp {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 1px solid var(--blue);
-    color: var(--lime);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 26px;
-    transform: rotate(-15deg);
-}
-
-.about-stamp span {
-    color: var(--paper);
-    font: 10px var(--mono);
-    line-height: 1.6;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-
-.about-content>p:not(.eyebrow) {
+.about-content>p:not(.eyebrow),
+.about-subsection>p:not(.eyebrow) {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.7;
     max-width: 400px;
     margin: 28px 0 0;
+}
+
+.about-content h3,
+.about-subsection h3,
+.skills-list h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 38px;
+}
+
+.about-subsection>p strong {
+    color: var(--paper);
+    font-weight: 500;
+}
+
+.about-subsection>p span,
+.timeline-item span {
+    color: var(--muted);
+    font: 11px var(--mono);
+}
+
+.about-subsection>p+p {
+    margin-top: 16px;
 }
 
 .about-content .text-link {
@@ -524,11 +528,11 @@ h2 em {
 }
 
 .skills-list {
-    margin-top: 7px;
+    margin-top: 0;
 }
 
 .skills-list .eyebrow {
-    margin-bottom: 13px;
+    margin-bottom: 0;
 }
 
 .skill {
@@ -558,6 +562,34 @@ h2 em {
     font-style: normal;
     color: var(--lime);
     font-size: 18px;
+}
+
+.empty-state {
+    border: 1px dashed var(--line);
+    padding: 18px;
+    font: 11px var(--mono) !important;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.timeline-item {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 28px;
+}
+
+.timeline-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 14px;
 }
 
 .contact {
@@ -712,15 +744,15 @@ footer {
     }
 
     .about {
-        display: block;
         padding-top: 100px;
         padding-bottom: 100px;
     }
 
-    .about-stamp {
-        margin-bottom: 60px;
+    .about-details {
+        display: block;
     }
 
+    .about-subsection,
     .skills-list {
         margin-top: 70px;
     }
