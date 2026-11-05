@@ -107,11 +107,6 @@ a {
     color: var(--lime);
 }
 
-.site-nav span {
-    color: #55585d;
-    margin-left: 8px;
-}
-
 .header-cta {
     color: var(--ink);
     background: var(--lime);
@@ -227,37 +222,6 @@ h2 em {
     transition: color .2s;
 }
 
-.marquee-band {
-    background: var(--lime);
-    color: var(--ink);
-    overflow: hidden;
-    padding: 17px 0;
-    transform: rotate(-1.5deg) scale(1.02);
-}
-
-.marquee-track {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-    white-space: nowrap;
-    width: max-content;
-    animation: slide 22s linear infinite;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.marquee-track b {
-    color: var(--blue);
-    font-size: 19px;
-}
-
-@keyframes slide {
-    to {
-        transform: translateX(-50%);
-    }
-}
-
 .work {
     padding-top: 160px;
     padding-bottom: 150px;
@@ -270,8 +234,7 @@ h2 em {
     margin-bottom: 70px;
 }
 
-.section-heading h2,
-.about h2 {
+.section-heading h2 {
     font-size: clamp(50px, 6vw, 78px);
 }
 
@@ -490,8 +453,8 @@ h2 em {
     gap: 70px 45px;
 }
 
-.about-content>p:not(.eyebrow),
-.about-subsection>p:not(.eyebrow) {
+.about-content>p,
+.about-subsection>p {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.7;
@@ -531,10 +494,6 @@ h2 em {
     margin-top: 0;
 }
 
-.skills-list .eyebrow {
-    margin-bottom: 0;
-}
-
 .skill {
     display: flex;
     align-items: center;
@@ -544,12 +503,6 @@ h2 em {
 
 .skill:last-child {
     border-bottom: 1px solid var(--line);
-}
-
-.skill span {
-    color: var(--muted);
-    font: 10px var(--mono);
-    width: 42px;
 }
 
 .skill strong {
@@ -702,10 +655,6 @@ footer {
         min-height: 600px;
         padding-top: 90px;
         padding-bottom: 90px;
-    }
-
-    .marquee-band {
-        margin-top: 0;
     }
 
     .work {
