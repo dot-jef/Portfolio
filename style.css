@@ -238,6 +238,12 @@ h2 em {
     font-size: clamp(50px, 6vw, 78px);
 }
 
+.section-title {
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -3px;
+    margin-bottom: 60px;
+}
+
 .section-description {
     color: var(--muted);
     max-width: 260px;
@@ -448,9 +454,9 @@ h2 em {
 }
 
 .about-details {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 70px 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .about-content>p,
@@ -467,7 +473,46 @@ h2 em {
 .skills-list h3 {
     font-size: 20px;
     font-weight: 500;
-    margin-top: 38px;
+    margin-top: 0;
+}
+
+.detail-card,
+.skill-group,
+.personal-detail {
+    border: 1px solid var(--line);
+    padding: 24px;
+    background: rgba(240, 238, 232, .025);
+}
+
+.detail-card {
+    margin-top: 28px;
+}
+
+.info-list {
+    margin-top: 0;
+}
+
+.info-list div {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+.info-list dt,
+.info-list dd {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.info-list dt {
+    color: var(--muted);
+    font: 11px var(--mono);
+    text-transform: uppercase;
+}
+
+.info-list dd {
+    color: var(--paper);
 }
 
 .about-subsection>p strong {
@@ -515,6 +560,44 @@ h2 em {
     font-style: normal;
     color: var(--lime);
     font-size: 18px;
+}
+
+.skill-group {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+    padding: 18px;
+}
+
+.skill-cards,
+.personal-cards {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.skill-group strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.skill-group span {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.personal-detail p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 10px;
 }
 
 .empty-state {
@@ -697,13 +780,9 @@ footer {
         padding-bottom: 100px;
     }
 
-    .about-details {
-        display: block;
-    }
-
-    .about-subsection,
-    .skills-list {
-        margin-top: 70px;
+    .info-list div,
+    .skill-group {
+        grid-template-columns: 105px 1fr;
     }
 
     .contact {
