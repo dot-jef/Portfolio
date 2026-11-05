@@ -134,7 +134,7 @@ a {
 }
 
 .hero {
-    min-height: 560px;
+    min-height: calc(100vh - 88px);
     padding-top: 125px;
     padding-bottom: 125px;
     display: flex;
@@ -223,6 +223,7 @@ h2 em {
 }
 
 .work {
+    border-top: 1px solid var(--line);
     padding-top: 160px;
     padding-bottom: 150px;
 }
@@ -488,31 +489,52 @@ h2 em {
     margin-top: 28px;
 }
 
-.info-list {
+.background-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.background-cards .detail-card {
     margin-top: 0;
 }
 
-.info-list div {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 16px;
-    padding: 14px 0;
+.detail-card strong,
+.detail-card span {
+    display: block;
 }
 
-.info-list dt,
-.info-list dd {
+.detail-card strong {
     font-size: 13px;
-    line-height: 1.5;
+    font-weight: 500;
 }
 
-.info-list dt {
+.detail-card > span {
     color: var(--muted);
     font: 11px var(--mono);
-    text-transform: uppercase;
+    line-height: 1.5;
+    margin-top: 10px;
 }
 
-.info-list dd {
-    color: var(--paper);
+.education-degree {
+    font-size: 18px !important;
+}
+
+.education-meta {
+    color: var(--muted);
+    font: 11px var(--mono) !important;
+}
+
+.education-degree + .education-meta {
+    margin-top: 10px;
+}
+
+.detail-card > p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 24px;
 }
 
 .about-subsection>p strong {
@@ -563,10 +585,8 @@ h2 em {
 }
 
 .skill-group {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 16px;
-    padding: 18px;
+    min-height: 104px;
+    padding: 24px;
 }
 
 .skill-cards,
@@ -576,15 +596,24 @@ h2 em {
     margin-top: 28px;
 }
 
+.skill-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+}
+
 .skill-group strong {
-    font-size: 13px;
+    display: block;
+    color: var(--paper);
+    font-size: 16px;
     font-weight: 500;
 }
 
 .skill-group span {
+    display: block;
     color: var(--muted);
-    font-size: 13px;
+    font: 11px var(--mono);
     line-height: 1.5;
+    margin-top: 10px;
 }
 
 h4 {
@@ -735,7 +764,7 @@ footer {
 
     .hero {
         display: block;
-        min-height: 600px;
+        min-height: calc(100vh - 72px);
         padding-top: 90px;
         padding-bottom: 90px;
     }
@@ -780,9 +809,8 @@ footer {
         padding-bottom: 100px;
     }
 
-    .info-list div,
-    .skill-group {
-        grid-template-columns: 105px 1fr;
+    .background-cards {
+        grid-template-columns: 1fr;
     }
 
     .contact {
