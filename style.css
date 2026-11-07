@@ -261,6 +261,12 @@ h2 em {
 
 .project-card {
     display: block;
+    min-width: 0;
+    transition: transform .25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-large {
@@ -271,6 +277,7 @@ h2 em {
     position: relative;
     overflow: hidden;
     height: 330px;
+    border: 1px solid var(--line);
 }
 
 .project-large .project-visual {
@@ -421,26 +428,39 @@ h2 em {
 }
 
 .project-meta {
-    border-bottom: 1px solid var(--line);
-    padding: 18px 0 15px;
+    border: 1px solid var(--line);
+    border-top: 0;
+    min-height: 220px;
+    padding: 26px;
+    background: rgba(240, 238, 232, .025);
 }
 
 .project-info h3 {
-    font-size: 16px;
+    max-width: 420px;
+    font-size: 21px;
+    line-height: 1.15;
     font-weight: 500;
 }
 
-.project-info p {
+.project-status,
+.project-stack {
     color: var(--muted);
     font: 12px var(--mono);
-    margin-top: 7px;
+    line-height: 1.5;
+    margin-top: 12px;
 }
 
-.project-info p:nth-of-type(3) {
+.project-status {
+    color: var(--lime);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.project-description {
     font-family: var(--display);
     font-size: 15px;
     line-height: 1.6;
-    margin-top: 18px;
+    margin-top: 20px;
 }
 
 .project-repo,
