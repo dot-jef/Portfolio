@@ -3,7 +3,7 @@
 :root {
     --ink: #101216;
     --paper: #f0eee8;
-    --muted: #989a9b;
+    --muted: #b7babd;
     --line: rgba(240, 238, 232, .16);
     --lime: #d8f56a;
     --blue: #6879ff;
@@ -265,7 +265,7 @@ h2 em {
     font: 11px var(--mono);
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 1px solid #52555c;
+    border-bottom: 1px solid #858991;
     padding-bottom: 7px;
     transition: color .2s;
 }
@@ -869,7 +869,7 @@ footer {
     padding: 25px 6vw;
     display: flex;
     justify-content: space-between;
-    color: #676a70;
+    color: #8d9299;
     font: 10px var(--mono);
     text-transform: uppercase;
     letter-spacing: 1px;
