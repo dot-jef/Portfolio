@@ -190,6 +190,18 @@ h2 em {
     margin: 34px 0;
 }
 
+.hero-current {
+    color: var(--paper);
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: -12px 0 34px;
+}
+
+.hero-current strong {
+    color: var(--lime);
+}
+
 .hero-actions {
     display: flex;
     align-items: center;
